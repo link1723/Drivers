@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section Styles {
+    @Styles.Render("~/css/Plugins/DataTables")
+    @Styles.Render("~/css/Home/Index")
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="fileSubmitContainer">
+            <input id="inputFile" type="file" accept=".txt" />
+            <button id="submitFile" class="submitButton">Submit File</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="resultTableContainer">
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/js/Plugins/DataTables")
+    @Scripts.Render("~/js/Home/Index")
+    <script type="text/javascript">
+        (function () {
+            var actions = {
+                ProcessFile: "@Url.Action("ProcessFile", "Home")"
+            }
+            var data = {
+
+            }
+            Index = new Index(actions, data);
+        }());
+    </script>
+}

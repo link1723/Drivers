@@ -1,0 +1,37 @@
+﻿@using Drivers.Models.ViewModels;
+
+@model List<ResultMV>
+
+<div class="table-responsive">
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Miles</th>
+                <th>MPH</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Miles</td>
+                        <td>@item.Name</td>
+                        <td>@item.Miles</td>
+                        <td>@item.MilesPerHour</td>
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
